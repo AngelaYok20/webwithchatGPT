@@ -1,0 +1,117 @@
+/* Estilos para el título */
+h1 {
+    font-family: "Rock 3D", system-ui;
+    font-weight: 800;
+    font-size: 4.2rem; /* Tamaño más grande para el título */
+    font-style: normal;
+    margin-top: 20px; /* Espacio en la parte superior */
+    margin-bottom: 20px; /* Espacio en la parte inferior */
+}
+
+/* Estilos para el cuerpo */
+body {
+    font-family: 'Arial Rounded MT Bold';
+    margin: 0;
+    padding: 0;
+    background: 
+        url('yok\ img/bb.webp'), /* Huella de gato en el fondo */
+        linear-gradient(135deg, #f8e3cf, #c97079); /* Fondo degradado */
+    background-repeat: repeat, no-repeat; /* Repetir la imagen de las huellas, no repetir el degradado */
+    background-size: auto, cover; /* Tamaño automático para las huellas, cubrir para el degradado */
+}
+
+/* Estilos para los álbumes */
+.album {
+    padding: 40px; /* Mayor padding para cada álbum */
+    margin: 20px auto;
+    background-color: #fdebd0; /* Melocotón claro */
+    border-radius: 25px; /* Bordes más redondeados */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 1s ease-in-out;
+    transition: transform 0.3s ease-in-out;
+    overflow: hidden; /* Para que el contenido no sobresalga */
+    display: flex; /* Usar display flex para alinear elementos */
+    align-items: flex-start; /* Alinear los elementos al principio */
+    max-width: 800px; /* Ancho máximo para cada álbum */
+    width: 90%; /* Ancho del 90% del contenedor */
+    margin-left: auto; /* Alinear al centro */
+    margin-right: auto; /* Alinear al centro */
+}
+
+.album:hover {
+    transform: scale(1.05);
+}
+
+/* Estilos para el encabezado */
+header, nav, footer {
+    background-color: #ffb3ba; /* Rosa claro */
+    color: #000000;
+    text-align: center;
+    padding: 20px 0; /* Espaciado interno */
+}
+
+/* Estilos para la barra de navegación */
+nav {
+    padding: 10px  10px 20px 10px;
+}
+
+nav a {
+    color: #000000;
+    text-decoration: none;
+    margin: 0 10px;
+    font-size: 1.2rem; /* Tamaño del texto del enlace */
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+/* Estilos para las secciones de álbum */
+.album-content {
+    flex: 1; /* Ocupar el espacio restante */
+    padding: 20px; /* Padding uniforme para el contenido */
+    text-align: left; /* Alinear el texto a la izquierda */
+}
+
+.album h2 {
+    font-size: 2rem; /* Tamaño más grande para los títulos de los álbumes */
+    margin-bottom: 10px; /* Espacio en la parte inferior del título */
+}
+
+.album p {
+    font-size: 1.2rem; /* Tamaño del texto del párrafo */
+    margin-bottom: 20px; /* Espacio en la parte inferior del párrafo */
+    display: block; /* Presentación de bloque para que estén uno debajo del otro */
+}
+
+/* Estilos para las imágenes */
+.album img {
+    width: 100%; /* Ancho al 100% del contenedor */
+    height: auto; /* Altura automática para mantener la proporción */
+    display: block; /* Presentación de bloque para evitar problemas de alineación */
+    margin-bottom: 20px; /* Espacio debajo de la imagen */
+    border-radius: 25px; /* Bordes más redondeados */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra */
+}
+
+/* Media query para pantallas más pequeñas */
+@media (max-width: 768px) {
+    .album {
+        max-width: calc(100% - 40px); /* Ancho máximo menos el margen */
+    }
+}
+/* Estilos para el botón de fotos */
+button {
+    background-color:#ffb3ba; /* Color rosa */
+    color: #000000; /* Texto blanco */
+    border: none; /* Sin borde */
+    padding: 10px 20px; /* Espaciado interno */
+    font-size: 1rem; /* Tamaño de fuente */
+    border-radius: 5px; /* Bordes redondeados */
+    cursor: pointer; /* Cursor de puntero al pasar el mouse */
+    transition: background-color 0.3s ease; /* Transición suave del color de fondo */
+}
+
+button:hover {
+    background-color: #ce4776; /* Color rosa más oscuro al pasar el mouse */
+}
