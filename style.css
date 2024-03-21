@@ -4,24 +4,107 @@ h1 {
     font-weight: 800;
     font-size: 4.2rem; /* Tamaño más grande para el título */
     font-style: normal;
-    margin-top: 20px; /* Espacio en la parte superior */
-    margin-bottom: 20px; /* Espacio en la parte inferior */
+    margin: 20px 0; /* Espacio vertical */
 }
 
-/* Estilos para el cuerpo */
+/* Estilos generales */
 body {
     font-family: 'Arial Rounded MT Bold';
     margin: 0;
     padding: 0;
-    background: 
-        url('yok\ img/bb.webp'), /* Huella de gato en el fondo */
-        linear-gradient(135deg, #f8e3cf, #c97079); /* Fondo degradado */
-    background-repeat: repeat, no-repeat; /* Repetir la imagen de las huellas, no repetir el degradado */
-    background-size: auto, cover; /* Tamaño automático para las huellas, cubrir para el degradado */
+    background: url('yok\ img/bb.webp'), linear-gradient(135deg, #f8e3cf, #c97079);
+    background-repeat: repeat, no-repeat;
+    background-size: auto, cover;
 }
 
+.album:hover {
+    transform: scale(1.05);
+}
+
+header, nav, footer {
+    background-color: #ffb3ba;
+    color: #000;
+    text-align: center;
+    padding: 20px 0;
+}
+
+nav {
+    padding: 10px;
+}
+
+nav a {
+    color: #000;
+    text-decoration: none;
+    margin: 0 10px;
+    font-size: 1.2rem;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+
+
+.album h2 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.album p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    display: block;
+}
+
+
+button {
+    background-color: #ffb3ba;
+    color: #000;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #ce4776;
+}
+
+.album-content .hidden-images {
+    display: none;
+}
+
+.album-content .visible-images {
+    display: flex;
+    animation: slideIn 1s ease-in-out;
+}
+
+@keyframes slideIn {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+.regresar {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+}
+
+@media (max-width: 768px) {
+    .album {
+        max-width: calc(100% - 40px);
+    }
+}
 /* Estilos para los álbumes */
 .album {
+    display: flex;
+    align-items: center;
     padding: 40px; /* Mayor padding para cada álbum */
     margin: 20px auto;
     background-color: #fdebd0; /* Melocotón claro */
@@ -30,88 +113,26 @@ body {
     animation: fadeIn 1s ease-in-out;
     transition: transform 0.3s ease-in-out;
     overflow: hidden; /* Para que el contenido no sobresalga */
-    display: flex; /* Usar display flex para alinear elementos */
-    align-items: flex-start; /* Alinear los elementos al principio */
-    max-width: 800px; /* Ancho máximo para cada álbum */
-    width: 90%; /* Ancho del 90% del contenedor */
+    max-width: 60%; /* Ancho máximo para cada álbum (modificado al 80%) */
+    width: 100%; /* Cambiado al 100% */
     margin-left: auto; /* Alinear al centro */
     margin-right: auto; /* Alinear al centro */
+    position: relative; /* Agregamos posición relativa */
 }
 
-.album:hover {
-    transform: scale(1.05);
-}
-
-/* Estilos para el encabezado */
-header, nav, footer {
-    background-color: #ffb3ba; /* Rosa claro */
-    color: #000000;
-    text-align: center;
-    padding: 20px 0; /* Espaciado interno */
-}
-
-/* Estilos para la barra de navegación */
-nav {
-    padding: 10px  10px 20px 10px;
-}
-
-nav a {
-    color: #000000;
-    text-decoration: none;
-    margin: 0 10px;
-    font-size: 1.2rem; /* Tamaño del texto del enlace */
-}
-
-nav a:hover {
-    text-decoration: underline;
-}
-
-/* Estilos para las secciones de álbum */
 .album-content {
-    flex: 1; /* Ocupar el espacio restante */
+    flex: 2; /* Ocupar el doble de espacio que la imagen */
     padding: 20px; /* Padding uniforme para el contenido */
     text-align: left; /* Alinear el texto a la izquierda */
 }
 
-.album h2 {
-    font-size: 2rem; /* Tamaño más grande para los títulos de los álbumes */
-    margin-bottom: 10px; /* Espacio en la parte inferior del título */
-}
-
-.album p {
-    font-size: 1.2rem; /* Tamaño del texto del párrafo */
-    margin-bottom: 20px; /* Espacio en la parte inferior del párrafo */
-    display: block; /* Presentación de bloque para que estén uno debajo del otro */
-}
-
-/* Estilos para las imágenes */
 .album img {
-    width: 100%; /* Ancho al 100% del contenedor */
+    width: 50%; /* Ancho al 40% del contenedor (modificado al 40%) */
     height: auto; /* Altura automática para mantener la proporción */
     display: block; /* Presentación de bloque para evitar problemas de alineación */
     margin-bottom: 20px; /* Espacio debajo de la imagen */
     border-radius: 25px; /* Bordes más redondeados */
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra */
-}
-
-/* Media query para pantallas más pequeñas */
-@media (max-width: 768px) {
-    .album {
-        max-width: calc(100% - 40px); /* Ancho máximo menos el margen */
-    }
-}
-/* Estilos para el botón de fotos */
-button {
-    background-color:#ffb3ba; /* Color rosa */
-    color: #000000; /* Texto blanco */
-    border: none; /* Sin borde */
-    padding: 10px 20px; /* Espaciado interno */
-    font-size: 1rem; /* Tamaño de fuente */
-    border-radius: 5px; /* Bordes redondeados */
-    cursor: pointer; /* Cursor de puntero al pasar el mouse */
-    transition: background-color 0.3s ease; /* Transición suave del color de fondo */
-}
-
-button:hover {
-    background-color: #ce4776; /* Color rosa más oscuro al pasar el mouse */
+    margin-left: auto; /* Mover la imagen hacia la derecha */
+    margin-right: 0; /* Restablecer el margen derecho */
 }
